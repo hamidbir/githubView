@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:githbview/detailUser.dart';
+import 'package:githbview/history.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -81,12 +83,22 @@ class _HomepageState extends State<Homepage> {
         itemCount: data == null ? 0:data.length,
         itemBuilder: (BuildContext context, int index){
           return ListTile(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>DetailUser(data[index]['url'])));
+            },
             title: Text(data[index]['login']),
             leading: CircleAvatar(
               child: Image.network(data[index]['avatar_url']),
             ),
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder:(BuildContext context)=>History()));
+        },
+        backgroundColor: Colors.black,
+        child: Icon(Icons.history,color: Colors.white,),
       ),
     );
   }
