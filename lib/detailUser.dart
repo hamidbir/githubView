@@ -43,7 +43,7 @@ class _DetailUserState extends State<DetailUser> {
                 ),
                                 Column(
                   children: <Widget>[
-                    Text('Follwing',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                    Text('Following',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
                     Text('0',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black,),textAlign: TextAlign.center,),
                   ],
                 ),
