@@ -84,7 +84,7 @@ class _HomepageState extends State<Homepage> {
         itemBuilder: (BuildContext context, int index){
           return ListTile(
             onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>DetailUser(data[index]['url'])));
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>DetailUser(url:data[index]['url'])));
             },
             title: Text(data[index]['login']),
             leading: CircleAvatar(
