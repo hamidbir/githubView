@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'DataModel/dUser.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailUser extends StatefulWidget {
   final String url;
@@ -127,7 +128,12 @@ class _DetailUserState extends State<DetailUser> {
                 Padding(
                   padding: const EdgeInsets.all(3.0),
                   child: GestureDetector(
-                    child: Text('${snapshot.data.htmlurl}', style: TextStyle(color: Colors.blue,decoration: TextDecoration.underline),)),
+                    onTap: (){
+                      launch(snapshot.data.htmlurl);
+
+                    },
+                    child: Text('${snapshot.data.htmlurl}', style: TextStyle(color: Colors.blue,decoration: TextDecoration.underline),)
+                    ),
                 ),
               ],
             );
